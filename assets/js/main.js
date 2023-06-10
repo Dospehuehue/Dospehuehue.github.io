@@ -28,8 +28,35 @@ $(document).ready(function() {
 		if ($('.navbar-collapse').hasClass('in')){
 			$('.navbar-collapse').removeClass('in').addClass('collapse');
 		}
-		
 	});
+});
 
+$(document).ready(function() {
+    /*scrollto btn*/
+
+    $(window).bind('scroll', function() {
+         if ($(window).scrollTop() > 0) {
+             $('#header').addClass('header-scrolled');
+         }
+         else {
+             $('#header').removeClass('header-scrolled');
+         }
+    });
+
+            /* ======= Scrollspy ======= */
+        $('body').scrollspy({ target: '#header', offset: 100});
+        
+        $('a.btn btn-primary btn-cta').on('click', function(S){
+            //store hash
+        var target = this.hash;
+                
+        S.preventDefault();
+        
+        $('body').scrollTo(target, 800, {offset: -50, 'axis':'y'});
+        //Collapse mobile menu after clicking
+        if ($('.navbar-collapse').hasClass('in')){
+            $('.navbar-collapse').removeClass('in').addClass('collapse');
+        }
+    });
 
 });

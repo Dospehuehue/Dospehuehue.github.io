@@ -442,7 +442,8 @@ a.btn-cta {
 }
 .testimonials-section .item.item-reversed .profile-holder {
   left: inherit;
-  right: 30px;
+  right: -50px;
+  top: 75px;
 }
 .testimonials-section .item.item-reversed .quote {
   margin-left: 0;
@@ -459,13 +460,14 @@ a.btn-cta {
 }
 .testimonials-section .item .profile-holder {
   position: absolute;
-  left: 30px;
+  left: -10px;
+  top: 75px;
   text-align: center;
 }
 .testimonials-section .item .profile-image {
   display: inline-block;
   margin: 0 auto;
-  width: 125px;
+  width: 150px;
   height: 200px;
 }
 .testimonials-section .item .quote {
