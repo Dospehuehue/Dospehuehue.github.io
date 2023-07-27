@@ -1,3 +1,21 @@
+$(document).ready(function(){
+    $('.carousel-inner').slick({
+        dots: true,
+        infinite: true,
+        speed: 800,
+        fade: true,
+        cssEase: 'linear',
+        autoplay: true,
+        autoplaySpeed: 5000,
+        arrows: true,
+        pauseOnFocus: true,
+        pauseOnHover: true,
+        pauseOnDotsHover: true,
+        touchMove: true,
+        waitForAnimate: false,
+    });
+});
+
 $(document).ready(function() {
 
     
@@ -61,3 +79,4 @@ $(document).ready(function() {
 
     
 });
+

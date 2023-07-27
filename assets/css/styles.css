@@ -87,7 +87,7 @@ a.btn-cta {
 .carousel-fade .carousel-control {
   z-index: 2;
 }
-.carousel-indicators {
+/*.carousel-indicators {
   bottom: 30px;
   margin-bottom: 0;
 }
@@ -105,7 +105,7 @@ a.btn-cta {
   height: 11px;
   margin: 0;
   margin-right: 5px;
-}
+}*/
 /* ======= Header ======= */
 .header {
   position: fixed;
@@ -178,8 +178,8 @@ a.btn-cta {
   margin-top: 0;
   background: none;
   position: absolute;
-  right: 10px;
-  top: 10px;
+  right: 15px;
+  top: 20%;
   background: #26282c;
 }
 .main-nav .navbar-toggle:focus {
@@ -233,6 +233,7 @@ a.btn-cta {
   background: #26282c;
   color: rgba(255, 255, 255, 0.6);
   padding: 15px 0;
+  width: 100%;
 }
 .footer a {
   color: #40babd;
@@ -245,8 +246,9 @@ a.btn-cta {
   min-height: 560px;
   background: #494d55;
   position: relative;
+  width: 100%;
 }
-.hero-section .figure-holder-wrapper {
+/*.hero-section .figure-holder-wrapper {
   position: absolute;
   left: 0;
   bottom: 0;
@@ -262,15 +264,30 @@ a.btn-cta {
   bottom: 0;
   right: 0;
   z-index: 10;
-}
+}*/
 .hero-carousel {
   height: 560px;
   color: #fff;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
 }
+
+.carousel-inner {
+  position: relative;
+  height: 560px;
+}
+
 .hero-carousel .carousel-inner .item {
   height: 560px;
+  width: 100%;
   background-position: center center;
 }
+
+
+
 .hero-carousel .carousel-inner .item-1 {
   background-image: url('../images/carousel_item1_background.jpg');
   -webkit-background-size: cover;
@@ -292,26 +309,145 @@ a.btn-cta {
   -o-background-size: cover;
   background-size: cover;
 }
-.hero-carousel .carousel-inner .heading {
+.carousel-inner .heading {
   font-size: 30px;
   line-height: 1.4;
   font-weight: bold;
-  margin-top: 0;
+  margin-top: 10%;
   padding-left: 15px;
   padding-bottom: 10px;
   margin-bottom: 15px;
   background-color: rgba(0, 0, 0, 0.4);
 }
-.hero-carousel .carousel-inner .intro {
+
+.carousel-inner .intro {
   font-size: 22px;
   padding-left: 15px;
   padding-bottom: 10px;
   margin-bottom: 15px;
   background-color: rgba(0, 0, 0, 0.4);
+  max-height: 200px;
+  width: max-content;
+  max-width: 215%;
 }
-.hero-carousel .carousel-inner .intro + .btn {
+
+.carousel-inner .intro + .btn {
   margin-top: 15px;
 }
+
+
+/* ======= SLick styling =======*/
+
+.slick-list {
+  overflow: hidden;
+}
+/* Лента слайдов */
+.slick-track {
+  display: flex;
+}
+/* Слайд */
+
+.slick-arrow{
+  position: absolute;
+  z-index: 10;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 60px;
+}
+/*/* Стрелка влево */
+.slick-arrow.slick-prev {
+  height: 560px;
+  width: 5%;
+  left: 0;
+  opacity: 0;
+}
+ /*Стрелка вправо */
+.slick-arrow.slick-next {
+  height: 560px;
+  width: 5%;
+  right: 0;
+  opacity: 0;
+}
+
+.slick-arrow.slick-prev:before {
+  height: 560px;
+  width: 5%;
+  right: 0;
+  opacity: 0.1;
+  color: #ff00d8;
+}
+
+.slick-arrow.slick-next:before {
+  height: 560px;
+  width: 5%;
+  right: 0;
+  opacity: 0.1;
+  color: #ff00d8;
+}
+
+.slick-arrow.slick-prev:hover {
+  height: 560px;
+  width: 5%;
+  right: 0;
+  opacity: 0.1;
+  background-color: #ff00d8;
+  color: #ff00d8;
+}
+
+.slick-arrow.slick-next:hover {
+  height: 560px;
+  width: 5%;
+  right: 0;
+  opacity: 0.1;
+  background-color: #ff00d8;
+  color: #ff00d8;
+}
+
+/* Точки (булиты) */
+.carousel-inner .slick-dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  bottom: 5%;
+  transform: translateY(5%);
+}
+.carousel-inner .slick-dots li {
+  list-style: none;
+  margin: 0px 10px;
+  border: none;
+  width: 11px;
+  height: 11px;
+}
+/* Активная точка */
+.carousel-inner .slick-dots li.slick-active button {
+  background-color: #ff00d8;
+  overflow: hidden;
+  border: 1px solid #ff00d8;
+}
+
+.carousel-inner .slick-dots li.slick-active button:before {
+  color:#ff00d8;
+  opacity: 0;
+}
+
+/* Элемент точки */
+.carousel-inner .slick-dots li button {
+  border-radius: 70%;
+  width: 11px;
+  height: 11px;
+  background-color: rgba(135,13,136,1);
+}
+
+.carousel-inner .slick-dots li button:before {
+  color: rgba(135,13,136,1);
+  width: 11px;
+  height: 11px;
+  opacity: 0;
+  top: -4.5px;
+}
+
 /* ======= About Section ======= */
 .about-section {
   padding-top: 90px;
@@ -460,7 +596,7 @@ a.btn-cta {
 }
 .testimonials-section .item .profile-holder {
   position: absolute;
-  left: -10px;
+  left: -50px;
   top: 75px;
   text-align: center;
 }
@@ -474,6 +610,7 @@ a.btn-cta {
   background: rgba(0, 0, 0, 0.7);
   color: #fff;
   margin-left: 105px;
+/*  margin-right: 0px;*/
   border-left: none;
   margin-bottom: 0;
   font-size: 14px;
@@ -543,7 +680,7 @@ a.btn-cta {
   background: none;
   padding: 8px 0;
   color: #fff;
-
+  font-size: 20px;
 }
 .feature-nav > li > a:hover {
   background: none;
@@ -609,18 +746,19 @@ a.btn-cta {
   }
   .hero-carousel .carousel-inner .heading {
     font-size: 26px;
+
   }
-  .hero-carousel .carousel-inner .item-content-inner {
+  .hero-carousel .carousel-inner .item {
     padding-top: 100px;
   }
-  .hero-section .figure-holder .figure-image {
+  /*.hero-section .figure-holder .figure-image {
     width: inherit;
     bottom: 0;
     top: inherit;
     right: inherit;
     left: 15px;
     max-width: 320px;
-  }
+  }*/
   .technologies li {
     margin-bottom: 15px;
   }
@@ -631,27 +769,47 @@ a.btn-cta {
     margin-bottom: 0;
   }
   .hero-carousel {
-    height: 660px;
+    height: 560px;
   }
   .hero-section .carousel-inner {
-    height: 660px;
+    height: 560px;
   }
   .hero-carousel .carousel-inner .item {
-    height: 660px;
+    height: 560px;
   }
+
+  .testimonials-section .item.item-reversed .profile-holder {
+    right: -5px;
+  }
+
+  .testimonials-section .item .profile-holder {
+    left: 0px;
+  }
+
   .testimonials-section .item .profile-image {
     width: 60px;
     height: 60px;
   }
   .testimonials-section .item .quote {
-    margin-left: 85px;
-    padding: 15px;
+    margin-left: 40px;
+    width: 95%;
+    padding: 10px;
   }
   .testimonials-section .item.item-reversed .quote {
-    margin-right: 85px;
+    margin-left: -25px;
+    width: 95%;
+    padding: 10px;
   }
   .team-section .item-inner {
     min-height: inherit;
+  }
+
+  .feature-nav {
+    text-align: center;
+    padding-left: 25px;
+  }
+  .feature-nav > li {
+    font-size: 18px;
   }
 }
 /* Small devices (tablets, 768px and up) */
@@ -663,11 +821,11 @@ a.btn-cta {
   .feature-nav > li {
     font-size: 15px;
   }
-  .hero-section .figure-holder .figure-image {
+ /* .hero-section .figure-holder .figure-image {
     width: 400px;
     bottom: inherit;
     top: 130px;
-  }
+ */ }
   .hero-carousel .carousel-inner .item-content-inner {
     max-width: 300px;
     padding-top: 120px;
